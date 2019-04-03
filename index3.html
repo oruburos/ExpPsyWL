@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='model/weightmodelsimple.js'></script>
+    </head>
+    <script>
+        $(document).ready(function() {
+            var JSONData=$().calculator();
+
+
+
+           // alert(JSONData);
+
+              div = document.getElementById("result")
+            div.innerHTML = JSONData
+
+             var JSONData2 = $().calculator({age: 60, currentWeight:500})
+             div2 = document.getElementById("result2")
+            div2.innerHTML = JSONData2
+
+var result2 = JSON.parse(JSONData);
+
+            $.each(result2, function(k, val){
+                console.log(" " + k   + " : " + result2[k].weightLost)
+
+});
+
+
+
+        });
+    </script>
+    <body>
+
+        <div id="result">
+            <table id = 'result_times'></table>
+
+        </div>
+
+    AQUI VIENE SEGUNDO CALCULO
+     <div id="result2">
+            <table id = 'result2'></table>
+
+        </div>
+
+
+
+    </body>
+</html>

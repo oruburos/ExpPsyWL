@@ -1,0 +1,94 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <script src="model/core.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="css/controltask.css">
+
+        </head>
+
+        <body onload=" hideSlider()" >
+        <div>
+
+
+        <h1>Weight Loss Task</h1>
+        <div id="avatarselection">
+            <h2>Choose a profile</h2>
+          <p>Select your profile</p>
+
+        <div class="row">
+          <div class="column">
+              <p class= 'button' id = "fatman" onclick="myFunction(this) ">
+                  Male, low activity
+              </p>
+          </div>
+          <div class="column">
+          <p class= 'button'  id = "middleman" onclick="myFunction(this)">
+                  Male, standard activity
+              </p>
+          </div>
+          <div class="column">
+            <p class= 'button' id = "skinnyman" onclick="myFunction(this)">
+                  Male, high activity
+              </p>
+          </div></div>
+            <div class="row">
+              <div class="column">
+            <p class= 'button' id = "fatwoman" onclick="myFunction(this)">
+                  Female, low activity
+              </p>
+          </div>
+          <div class="column">
+            <p class= 'button' id = "middlewoman" onclick="myFunction(this)">
+                  Female, standard activity
+              </p>
+          </div>
+          <div class="column">
+            <p class= 'button' onclick="myFunction(this)" id = "skinnywoman">
+                  Female, high activity
+              </p>
+          </div>
+        </div>
+        </div>
+
+
+
+
+        <div >
+        <div class="container">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <img id="expandedImg">
+          <div id="imgtext">qweqweqwew</div>
+
+        </div>
+    <div id = "experiment">
+
+
+
+
+        <div id="slidecontainer">
+
+            <br><br>
+            How many calories do you want to consume today?<br><br>
+            Use the slider scale below to indicate your answer.<br><br><br>
+
+
+          <input type="range" min="0" max="5000" value="2500" class="slider" id="myRange" orient="vertical">
+
+          <p>Calories <span id="calories"></span></p>
+
+            <button onclick="calculateWeightLoss()">Submit</button>
+
+    <p id="demo"></p>
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        </div>
+
+        </body >
+        </html>

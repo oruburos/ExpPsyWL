@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src="utils.js"></script>
+    <script src='model/weightmodelsimple.js'></script>
+    <script src="https://surveyjs.azureedge.net/1.0.10/survey.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/controltask.css">
+    <link rel="stylesheet" href="Survey/Survey.css"/>
+    <script src="Survey/Survey.js"></script>
+
+    <script src="experiment/experiment1.js"></script>
+</head>
+
+<body>
+<div>
+    <div style="text-align:center">
+        <div id="experiment">
+       <div id="slidecontainer">
+                <div class="progress-responsive">
+                    <figure>
+                        <div class="progress-responsive__bar"></div>
+                        <div class="progress-responsive__percent"></div>
+                    </figure>
+                </div>
+                <div id="day">
+                </div>
+                <br>
+                How many calories do you want to consume today?
+                Use the slider scale below to indicate your answer.<br>   <br>
+
+
+                <label for="tired">0</label><input type="range" min="0" max="5000" value="2500" class="slider"
+                                                   id="myRange" list="steplist">
+                <label for="tired2">5000</label>
+                <p>Calories <span id="calories"></span></p>
+                   <br>
+                How many steps do you want to walk today?
+                Use the slider scale below to indicate your answer.<br>
+                <br>
+
+                <label for="tired">0</label><input type="range" min="0" max="10000" value="5000" class="slider"
+                                                   id="myRange2" list="steplist">
+                <label for="tired2">10000</label>
+                <p>Steps <span id="steps"></span></p>
+
+
+                <button onclick="calculateWeightLoss()" id="task" class="button">Submit</button>
+
+
+            </div>
+            <p id="demo"></p>
+        </div>
+    </div>
+</div>
+
+<div id="result">
+
+</div>
+
+<div id="IntroSurvey">
+    <div id="surveyElement"></div>
+    <div id="surveyResult"></div>
+</div>
+<div  class= 'canvasdiv'  >
+    <canvas id="canvasExp"></canvas>
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<title>Weight Loss Task</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+	<script src="utils.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src='model/weightmodelsimple.js'></script>
+	<style>
+	canvas{
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+
+
+    <script>
+        var JSONData;
+        var labels = [];
+        var dataw = [];
+
+  $(document).ready(function() {
+      var config;
+      JSONData = $().calculator({age: 20, currentWeight: 245, calories:1750, endweight: 122});
+
+    //  perdida = $().calculatorDMY({age: 20, currentWeight: 285, calories:1800, endweight: 200})
+       console.log( " dia " + JSONData.daywl +" mes  " + JSONData.oml   + " ano " + JSONData.oyl);
+
+
+
+      resultDiv = document.getElementById("result")
+     // resultDiv.innerHTML = JSONData
+      var result2 = JSON.parse(JSONData.jsonoutput);
+
+
+
+      $.each(result2, function (k, val) {
+//          console.log(" " + k + " : " + result2[k].currentWeight)
+
+          labels.push(parseInt(result2[k].week));
+          dataw.push(parseFloat(result2[k].currentWeight));
+
+
+
+      });
+      resultDiv.innerHTML = "" + labels.length
+	  console.log("ready")
+
+
+
+        });
+    </script>
+
+
+
+
+
+
+
+
+<body>
+	<div style="width:75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+
+
+      config = {
+          type: 'line',
+          data: {
+              //labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels:labels,
+			  datasets: [
+                  {
+                  label: 'Unfilled',
+                  fill: false,
+                  backgroundColor: window.chartColors.blue,
+                  borderColor: window.chartColors.blue,
+                  data: [
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor()
+                  ],
+              }, {
+                  label: 'Dashed',
+                  fill: false,
+                  backgroundColor: window.chartColors.green,
+                  borderColor: window.chartColors.green,
+                  borderDash: [5, 5],
+                  data: [
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor()
+                  ],
+              }, {
+                  label: 'Filled',
+                  backgroundColor: window.chartColors.red,
+                  borderColor: window.chartColors.red,
+                  data: [
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor(),
+                      randomScalingFactor()
+                  ],
+                  fill: true,
+              },
+                  {
+                      label: 'Current Weight',
+                      fill: false,
+                      backgroundColor: window.chartColors.green,
+                      borderColor: window.chartColors.black,
+                      data: dataw,
+                  }
+              ]
+          },
+          options: {
+              responsive: true,
+              title: {
+                  display: true,
+                  text: 'Weight Loss Task'
+              },
+              tooltips: {
+                  mode: 'index',
+                  intersect: false,
+              },
+              hover: {
+                  mode: 'nearest',
+                  intersect: true
+              },
+              scales: {
+                  xAxes: [{
+                      display: true,
+                      scaleLabel: {
+                          display: true,
+                          labelString: 'Week'
+                      }
+                  }],
+                  yAxes: [{
+                      display: true,
+                      scaleLabel: {
+                          display: true,
+                          labelString: 'Weight'
+                      }
+                  }]
+              }
+          }
+      };
+
+
+
+
+		window.onload = function() {
+		 //   console.log("onload" + JSONData.jsonoutput)
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myLine = new Chart(ctx, config);
+		};
+	</script>
+
+  <div id="result">
+            <table id = 'result_times'></table>
+
+        </div>
+
+</body>
+
+</html>

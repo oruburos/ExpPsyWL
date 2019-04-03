@@ -1,0 +1,307 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+
+        <script src="model/model2.js"></script>
+        <script src="nhsWP/services/bodymodel.js"></script>
+        <script src="nhsWP/services/intervention.js"></script>
+        <script src="nhsWP/services/dailyparams.js"></script>
+        <script src="nhsWP/services/bodychange.js"></script>
+        <script src="nhsWP/services/baseline.js"></script>
+        <script src="nhsWP/constants/constants.js"></script>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial;
+    }
+
+    /* The grid: three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33%;
+        padding: 10px;
+    }
+
+    /* Style the images inside the grid */
+    .column img {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    .column img:hover {
+        opacity: 1;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* The expanding image container */
+    .container {
+        position: relative;
+        display: none;
+    }
+
+    /* Expanding image text */
+    #imgtext {
+        position: absolute;
+        bottom: 150px;
+        left: 150px;
+        color: darkcyan;
+    }
+
+    /* Closable button inside the expanded image */
+    .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: darkslateblue;
+        font-size: 50px;
+        cursor: pointer;
+    }
+
+
+    /*Slider part*/
+    .slidecontainer {
+        width: 100%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 60%;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        left: 50%;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        left: 50%;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #4CAF50;
+        cursor: pointer;
+    }
+
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+     $( document ).ready(function() {
+        console.log( "document loaded" );
+      //  $.getScript("model/model2.js");
+        console.log("body factory cargado")
+         $( "#slidecontainer" ).hide( "fast", function() {
+
+
+
+      });
+    });
+    var name, description, weight, gender;
+    </script>
+    </head>
+    <div>
+
+
+    <h1>Weight Loss Task</h1>
+
+
+    <div id="avatarselection">
+        <h2>Choose a character</h2>
+      <p>Click on your avatar:</p>
+
+    <div class="row">
+      <div class="column">
+        <img src="img/fatman.jpg" alt="fatman" style="width:40%" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="img/middleMan.jpg" alt="middleman" style="width:40%" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="img/skinnyman.jpg" alt="skinnyman" style="width:40%" onclick="myFunction(this);">
+      </div></div>
+        <div class="row">
+          <div class="column">
+        <img src="img/fatwoman.jpg" alt="fatwoman" style="width:40%" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="img/middlewoman.jpg" alt="middlewoman" style="width:40%" onclick="myFunction(this);">
+      </div>
+      <div class="column">
+        <img src="img/skinnywoman.jpg" alt="skinnywoman" style="width:40%" onclick="myFunction(this);">
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <div style="text-align:center">
+
+    <div class="container">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      <img id="expandedImg" style="width:30%">
+      <div id="imgtext">qweqweqwew</div>
+
+    </div>
+
+<div id = "experiment">
+
+    <div id = "day">
+        <br>
+        Day 1 of 28
+        <br>
+    </div>
+
+
+    <div id="slidecontainer">
+        <br><br>
+        How many calories do you want to consume today?<br><br>
+        Use the slider scale below to indicate your answer.<br><br><br>
+
+
+
+      <input type="range" min="0" max="5000" value="2500" class="slider" id="myRange"  list="steplist">
+
+      <p>Calories <span id="calories"></span></p>
+
+        <button onclick="calculateWeightLoss()">Submit</button>
+
+<p id="demo"></p>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("calories");
+    output.innerHTML = slider.value ;
+
+    $('.closebtn').on('click', function () {
+        $("#avatarselection").show("slow", function () {
+
+        });
+        $( "#slidecontainer" ).hide( "slow", function() {
+
+      });
+    });
+
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+function calculateWeightLoss() {
+  document.getElementById("demo").innerHTML = "Hello World";
+
+  var calories = document.getElementById("myRange").value
+   // alert("hola" + calories + Model.msgmodel)
+    int1 = Model.BodyChange(90, calories , 50, 0, 4000);
+
+    int2 =  BodyModel.createFromBaseline(int1)
+
+    console.log( int2.dtherm)
+
+}
+
+    function fillData(div, name){
+
+        switch(name) {
+        case "skinnyman":
+            name ="Skinny man";
+            description="Description random sa";
+            weight = "60";
+            gender = 'male';
+            break;
+        case "skinnywoman":
+            name ="Skinny woman";
+            description="Descripti sa";
+            weight = "40";
+            gender = 'female';
+            break;
+        case "fatman":
+            name ="fatman man";
+            description="Description random sa";
+            weight = "110";
+            gender = 'male';
+            break;
+        case "fatwoman":
+            name ="fat woman";
+            description="Descripti sa";
+            weight = "80";
+            gender = 'female';
+            break;
+        case "middlewoman":
+            name ="Middle woman";
+            description="Description random sa";
+            weight = "60";
+            gender = 'female';
+            break;
+        case "middleman":
+            name ="Middle man";
+            description="escripti sa";
+            weight = "80";
+            gender = 'male';
+            break;
+        default:
+            console.log("no se supoen")
+        }
+        console.log(" values " + weight)
+        div.innerHTML = "Weight:"+ weight+"<br>Gender:" + gender;
+    }
+
+    function myFunction(imgs) {
+        var expandImg = document.getElementById("expandedImg");
+        var imgText = document.getElementById("imgtext");
+        console.log(imgs.alt)
+        fillData(imgText , imgs.alt)
+        expandImg.src = imgs.src;
+        //imgText.innerHTML = weight;
+        expandImg.parentElement.style.display = "block";
+        $( "#avatarselection" ).hide( "slow", function() {
+
+        });
+         $( "#slidecontainer" ).show( "slow", function() {
+
+      });
+    }
+
+
+    </script>
+
+    </div>
+
+    </body >
+    </html>
