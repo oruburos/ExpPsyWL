@@ -14,7 +14,7 @@
     var url = new URL(window.location);
     var c = url.searchParams.get("c");
    // console.log("parameter condition " + c);
-    var maxTrial = 29;
+    var maxTrial = 91;
     var currentWeight = 300;
     $(document).ready(function () {
 
@@ -30,7 +30,7 @@
 
 
         var config;
-        JSONData = $().calculator({age: 35, currentWeight: 176.37, calories: 2200, endweight: 160 , noise: false});
+        JSONData = $().calculator({age: 35, currentWeight: 176.37, calories: 2325, endweight: 154 , noise: false});
 
          //console.log(" dia " + JSONData.daywl + " mes  " + JSONData.oml + " ano " + JSONData.oyl);
 
@@ -262,6 +262,11 @@ function kgToLbs(kg)
                 div = document.getElementById("day")
                 div.innerHTML = " Participation completed";
                 document.getElementById("task").disabled = true;
+
+                $("#debrief").hide();
+                $("#demo").hide();
+           $.getScript("Survey/SurveyDemo.js");
+
 
             }
         }
