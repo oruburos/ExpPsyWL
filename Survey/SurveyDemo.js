@@ -73,6 +73,8 @@ survey.onComplete.add(function (result) {
     $("#demo").show();
     $("#debrief").hide();
 
+    $("#canvasExp").hide();
+
 
 
     });
