@@ -9,11 +9,15 @@ var JSONData;
 var labels = [];
 var dataw = [];
 
+var conditionExp = 1;
+
+
 
 var url = new URL(window.location);
 var c = url.searchParams.get("c");
 
-// console.log("parameter condition " + c);
+console.log("parameter condition " + c);
+
 var maxTrial = 90;
 var currentWeight = 300;
 
