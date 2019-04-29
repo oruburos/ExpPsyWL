@@ -19,25 +19,25 @@ var json = {
                             {
                                 type: "nouislider",
                                 name: "steps_impact",
-                                isRequired: true,
+                               // isRequired: true,
                                 title: "To what extent does the amount of steps taken impact changes in weight? [0 not at all to 100 definitely]",
                             }     ,         {
                                 type: "nouislider",
                                 name: "calories_impact",
                                 title: "To what extent does the amount of calories consumed impact changes in weight? [0 not at all to 100 definitely]",
-                                 isRequired: true,
+                                // isRequired: true,
                             },
                             {
                                 type: "nouislider",
                                 name: "confidence",
-                                isRequired: true,
+                                //isRequired: true,
                                 title: "To what extent do you believe that what you are choosing to do (i.e. choosing number of steps, choosing number of calories consumed, or both) can change weight in the way you expect? [0 not at all to 100 definitely]",
                             },
                             {
                                 type: "rating",
                                 name: "control_score",
                                 title: "Please indicate to what extent you felt you had control over your weight on daily basis.",
-                                isRequired: true,
+                              //  isRequired: true,
                                 rateMin: 0,
                                 "rateMax": 10,
                         "minRateDescription": "No Control",
@@ -66,20 +66,36 @@ var survey = new Survey.Model(json);
 
 survey.onComplete.add(function (result) {
     $('.sv_body.sv_completed_page').hide();
-    $("body").css("overflow-y", "hidden");
+    //$("body").css("overflow-y", "hidden");
 
-    console.log("Result" + JSON.stringify(result.data))
+    console.log("Result " + JSON.stringify(result.data))
+    console.log("condition: " + conditionExp + " trial " + trial  )
+
+    if( experimentFinished){
      $(function () {
-          $("#slidecontainer").show();
+         $("#slidecontainer").show();
          div = document.getElementById("day")
          div.innerHTML = " Participation completed";
-        $("#demo").show();
-        $("#debrief").hide();
-        $("#canvasExp").hide();
-
-
+         $("#demo").show();
+         $("#debrief").hide();
+         $("#canvasExp").hide();
 
     });
+     }
+
+     else{
+     document.getElementById("task").disabled = false;
+         $("#debrief").show();
+        $("#slidecontainer").show();
+        $("#demo").show();
+
+        console.log("Regresando a canvas")
+        $("#canvasdiv").show();
+        $("#canvasExp").show()
+
+
+        }
+
 });
 
 survey.render("surveyElement");

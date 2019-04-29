@@ -10,14 +10,15 @@ var labels = [];
 var dataw = [];
 
 var conditionExp = 1;
-
+var experimentFinished = false;
+var timeToAsk = true;
 
 var url = new URL(window.location);
 var c = url.searchParams.get("c");
 
 console.log("parameter condition " + c);
 
-var maxTrial = 1;
+var maxTrial = 4;
 var currentWeight = 300;
 
 
@@ -31,6 +32,170 @@ function RecordTrial(trial, calories, steps, initialWeight, finalWeight) {
     this.finalWeight = finalWeight;
 
 }
+
+function kgToLbs(kg) {
+    return kg * 2.2;
+}
+
+function lbsToKgIndex(lbs) {
+    return lbs * .454;
+}
+
+function transformActivityLevel(steps) {
+    return .000075 * steps;
+}
+
+function calculateWeightLoss() {
+
+    var calories = document.getElementById("myRange").value
+    var steps = document.getElementById("myRange2").value
+    activityFromSteps = transformActivityLevel(steps)
+
+
+    console.log("trial " + trial + "calories " + calories + "activity " + activityFromSteps)
+   // trialRecord[trial] = calories;
+
+    var config;
+    JSONData = $().calculator({
+        sex: gender,
+        age: age,
+        currentWeight: currentWeight,
+        calories: calories,
+        endweight: endweightprofile,
+        activity: activityFromSteps,
+        noise: true,
+    });
+    console.log(" current weigh pounds" + currentWeight + " kgs " + JSONData.daywl)
+
+    var info = "";
+
+
+    //  trialWeight[trial ] = lbsToKgIndex(currentWeight);
+    prevWeight = currentWeight;
+    currentWeight = currentWeight - kgToLbs(JSONData.daywl);
+
+
+    //peso
+    // trialWeight[trial - 1] = lbsToKgIndex(currentWeight);
+
+    console.log("peso actual " + lbsToKgIndex(currentWeight))
+    if (JSONData.daywl < 0) {
+
+        info = "You <b>GAIN: " + (-1 * JSONData.daywl.toFixed(2)) + " kg.</b> since yesterday.<br>" +
+            "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
+        if (typeof JSONData.oml !== 'undefined' && c == 2) {
+
+            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - (JSONData.oml)).toFixed(2) + "kg</b>.<br>";
+        }
+    } else {
+
+
+        info = "You <b>LOST: " + JSONData.daywl.toFixed(2) + " kg.</b> since yesterday.<br>" +
+            "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
+        if (typeof JSONData.oml !== 'undefined' && c == 2) {
+
+            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - JSONData.oml).toFixed(2) + "kg</b>.<br>";
+        }
+
+    }
+
+    document.getElementById("demo").innerHTML = info
+
+    BG.responsive(Math.ceil(trial / maxTrial * 100), 20)
+
+
+    currentTrial = new RecordTrial(trial, calories, steps, lbsToKgIndex(prevWeight), lbsToKgIndex(currentWeight));
+    trialWeight[trial] = currentTrial;
+    trialCurrWeight[trial]= currentTrial.initialWeight;
+    chart.update();
+
+    trial++;
+
+
+    if (trial <= maxTrial) {
+        if(timeToAsk){
+              div = document.getElementById("day")
+        //div.innerHTML = " Participation completed";
+//        document.getElementById("task").disabled = true;
+
+        $("#debrief").hide();
+        $("#slidecontainer").hide();
+        $("#demo").hide();
+
+        console.log("Ocultando canvas")
+        $("#canvasdiv").hide();
+        $("#canvasExp").hide()
+
+
+
+
+             div = document.getElementById("day")
+            div.innerHTML = "Day " + trial + " of " + maxTrial;
+            resultDiv = document.getElementById("summary")
+
+        $.getScript("Survey/SurveyCausal.js");
+
+
+        }else {
+            //  console.log("ready")
+            div = document.getElementById("day")
+            div.innerHTML = "Day " + trial + " of " + maxTrial;
+            resultDiv = document.getElementById("summary")
+        }
+
+    } else {
+        div = document.getElementById("day")
+        div.innerHTML = " Participation completed";
+        document.getElementById("task").disabled = true;
+
+        $("#debrief").hide();
+        $("#slidecontainer").hide();
+        $("#demo").hide();
+
+        console.log("Ocultando canvas")
+        $("#canvasdiv").hide();
+        $("#canvasExp").hide();
+        experimentFinished = true;
+
+
+
+
+        $.getScript("Survey/SurveyCausal.js");
+
+        //  trialWeight[maxTrial+1]=lbsToKgIndex(currentWeight).toFixed(2)  //valor final
+
+
+        console.table(trialWeight)
+        console.log("ultimo peso " + lbsToKgIndex(currentWeight).toFixed(2))
+
+    }
+}
+
+function fillData(name) {
+
+    switch (name) {
+
+        case "middleman":
+            name = "Middle man";
+            description = "";
+            weight = "176.212";//80 kilos
+            gender = 'M';
+            endweightprofile = 130;
+            age = 20;
+            break;
+        default:
+            console.log("")
+    }
+    console.log(" Starting current weigh pounds" + weight + " kgs " + lbsToKgIndex(weight))
+    currentWeight = weight;
+
+    //  trialWeight[0 ] = 80;
+    div = document.getElementById("day")
+    div.innerHTML = "Day " + trial + " of " + maxTrial;
+
+}
+
+
 
 
 $(document).ready(function () {
@@ -56,7 +221,7 @@ $(document).ready(function () {
     dataw.push(80)
 
     $.each(result2, function (k, val) {
-                 console.log(" " + k + " : " + result2[k].currentWeight)
+           //      console.log(" " + k + " : " + result2[k].currentWeight)
 
         labels.push(parseInt(result2[k].week));
         dataw.push(lbsToKgIndex(parseFloat(result2[k].currentWeight)));
@@ -185,139 +350,3 @@ $('.closebtn').on('click', function () {
     });
 });
 
-
-function kgToLbs(kg) {
-    return kg * 2.2;
-}
-
-function lbsToKgIndex(lbs) {
-    return lbs * .454;
-}
-
-function transformActivityLevel(steps) {
-    return .000075 * steps;
-}
-
-function calculateWeightLoss() {
-
-    var calories = document.getElementById("myRange").value
-    var steps = document.getElementById("myRange2").value
-    activityFromSteps = transformActivityLevel(steps)
-
-
-    console.log("trial " + trial + "calories " + calories + "activity " + activityFromSteps)
-   // trialRecord[trial] = calories;
-
-    var config;
-    JSONData = $().calculator({
-        sex: gender,
-        age: age,
-        currentWeight: currentWeight,
-        calories: calories,
-        endweight: endweightprofile,
-        activity: activityFromSteps,
-        noise: true,
-    });
-    console.log(" current weigh pounds" + currentWeight + " kgs " + JSONData.daywl)
-
-    var info = "";
-
-
-    //  trialWeight[trial ] = lbsToKgIndex(currentWeight);
-    prevWeight = currentWeight;
-    currentWeight = currentWeight - kgToLbs(JSONData.daywl);
-
-
-    //peso
-    // trialWeight[trial - 1] = lbsToKgIndex(currentWeight);
-
-    console.log("peso actual " + lbsToKgIndex(currentWeight))
-    if (JSONData.daywl < 0) {
-
-        info = "You <b>GAIN: " + (-1 * JSONData.daywl.toFixed(2)) + " kg.</b> since yesterday.<br>" +
-            "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
-        if (typeof JSONData.oml !== 'undefined' && c == 2) {
-
-            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - (JSONData.oml)).toFixed(2) + "kg</b>.<br>";
-        }
-    } else {
-
-
-        info = "You <b>LOST: " + JSONData.daywl.toFixed(2) + " kg.</b> since yesterday.<br>" +
-            "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
-        if (typeof JSONData.oml !== 'undefined' && c == 2) {
-
-            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - JSONData.oml).toFixed(2) + "kg</b>.<br>";
-        }
-
-    }
-
-    document.getElementById("demo").innerHTML = info
-
-    BG.responsive(Math.ceil(trial / maxTrial * 100), 20)
-
-
-    currentTrial = new RecordTrial(trial, calories, steps, lbsToKgIndex(prevWeight), lbsToKgIndex(currentWeight));
-    trialWeight[trial] = currentTrial;
-    trialCurrWeight[trial]= currentTrial.initialWeight;
-    chart.update();
-
-    trial++;
-
-
-    if (trial <= maxTrial) {
-        //  console.log("ready")
-        div = document.getElementById("day")
-        div.innerHTML = "Day " + trial + " of " + maxTrial;
-        resultDiv = document.getElementById("summary")
-
-    } else {
-        div = document.getElementById("day")
-        div.innerHTML = " Participation completed";
-        document.getElementById("task").disabled = true;
-
-        $("#debrief").hide();
-        $("#slidecontainer").hide();
-        $("#demo").hide();
-
-        console.log("Ocultando canvas")
-        $("#canvasdiv").hide();
-        $("#canvasExp").hide()
-
-
-
-
-        $.getScript("Survey/SurveyCausal.js");
-
-        //  trialWeight[maxTrial+1]=lbsToKgIndex(currentWeight).toFixed(2)  //valor final
-
-
-        console.table(trialWeight,)
-        console.log("ultimo peso " + lbsToKgIndex(currentWeight).toFixed(2))
-
-    }
-}
-
-function fillData(name) {
-
-    switch (name) {
-
-        case "middleman":
-            name = "Middle man";
-            description = "";
-            weight = "176.212";//80 kilos
-            gender = 'M';
-            endweightprofile = 130;
-            age = 20;
-            break;
-        default:
-            console.log("")
-    }
-    console.log(" Starting current weigh pounds" + weight + " kgs " + lbsToKgIndex(weight))
-    currentWeight = weight;
-
-    //  trialWeight[0 ] = 80;
-    div = document.getElementById("day")
-    div.innerHTML = "Day " + trial + " of " + maxTrial;
-
-}
