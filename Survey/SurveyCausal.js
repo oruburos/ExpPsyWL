@@ -79,10 +79,11 @@ survey.onComplete.add(function (result) {
          $("#demo").show();
          $("#debrief").hide();
          $("#canvasExp").hide();
+         console.log("Preguntas")
+         console.table(questions);
 
     });
      }
-
      else{
      document.getElementById("task").disabled = false;
          $("#debrief").show();
@@ -91,10 +92,14 @@ survey.onComplete.add(function (result) {
 
         console.log("Regresando a canvas")
         $("#canvasdiv").show();
-        $("#canvasExp").show()
+        $("#canvasExp").show();
 
 
         }
+
+
+        recordQuestion = new RecordQuestions( parseInt( trial/stepQuestion)-1 , JSON.stringify(result.data ))
+        questions[ parseInt( trial/stepQuestion)-1 ] = recordQuestion;
 
 });
 

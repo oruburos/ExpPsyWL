@@ -8,6 +8,7 @@ var trial = 1;
 var JSONData;
 var labels = [];
 var dataw = [];
+var questions = [];
 
 var conditionExp = 1;
 var experimentFinished = false;
@@ -18,7 +19,18 @@ var c = url.searchParams.get("c");
 
 console.log("parameter condition " + c);
 
-var maxTrial = 4;
+var maxTrial = 9;
+var stepQuestion = 5; //cada cuanto pregunta
+
+
+if ( c == 3 || c==4 ){
+
+    stepQuestion = 3;
+
+}else{
+    stepQuestion = 9;
+}
+
 var currentWeight = 300;
 
 
@@ -30,6 +42,15 @@ function RecordTrial(trial, calories, steps, initialWeight, finalWeight) {
     this.steps = steps;
     this.initialWeight = initialWeight;
     this.finalWeight = finalWeight;
+
+}
+
+
+//function constructor to store the data regarding each trial
+function RecordQuestions(trial,data) {
+
+    this.trial = trial;
+    this.data = data;
 
 }
 
@@ -52,7 +73,7 @@ function calculateWeightLoss() {
     activityFromSteps = transformActivityLevel(steps)
 
 
-    console.log("trial " + trial + "calories " + calories + "activity " + activityFromSteps)
+    //console.log("trial " + trial + "calories " + calories + "activity " + activityFromSteps)
    // trialRecord[trial] = calories;
 
     var config;
@@ -65,7 +86,7 @@ function calculateWeightLoss() {
         activity: activityFromSteps,
         noise: true,
     });
-    console.log(" current weigh pounds" + currentWeight + " kgs " + JSONData.daywl)
+  //  console.log(" current weigh pounds" + currentWeight + " kgs " + JSONData.daywl)
 
     var info = "";
 
@@ -78,12 +99,12 @@ function calculateWeightLoss() {
     //peso
     // trialWeight[trial - 1] = lbsToKgIndex(currentWeight);
 
-    console.log("peso actual " + lbsToKgIndex(currentWeight))
+  //  console.log("peso actual " + lbsToKgIndex(currentWeight))
     if (JSONData.daywl < 0) {
 
         info = "You <b>GAIN: " + (-1 * JSONData.daywl.toFixed(2)) + " kg.</b> since yesterday.<br>" +
             "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
-        if (typeof JSONData.oml !== 'undefined' && c == 2) {
+        if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4) ){
 
             info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - (JSONData.oml)).toFixed(2) + "kg</b>.<br>";
         }
@@ -92,7 +113,7 @@ function calculateWeightLoss() {
 
         info = "You <b>LOST: " + JSONData.daywl.toFixed(2) + " kg.</b> since yesterday.<br>" +
             "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
-        if (typeof JSONData.oml !== 'undefined' && c == 2) {
+        if (typeof JSONData.oml !== 'undefined' &&  (c == 2 || c == 4) ) {
 
             info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - JSONData.oml).toFixed(2) + "kg</b>.<br>";
         }
@@ -109,6 +130,17 @@ function calculateWeightLoss() {
     trialCurrWeight[trial]= currentTrial.initialWeight;
     chart.update();
 
+
+
+    console.log(" trial , stepQuestion " , trial, stepQuestion, (trial%stepQuestion)  ,  (trial%stepQuestion) ==0 )
+    timeToAsk =  ((trial%stepQuestion) ==0);
+
+    if ( timeToAsk)
+    {
+        console.log(" voy a preguntar")
+    }else{
+        console.log(" no tooca")
+    }
     trial++;
 
 
