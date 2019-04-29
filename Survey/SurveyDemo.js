@@ -72,7 +72,6 @@ survey.onComplete.add(function (result) {
          div.innerHTML = " Participation completed";
     $("#demo").show();
     $("#debrief").hide();
-
     $("#canvasExp").hide();
 
 

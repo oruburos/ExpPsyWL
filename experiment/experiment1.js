@@ -12,13 +12,12 @@ var dataw = [];
 var conditionExp = 1;
 
 
-
 var url = new URL(window.location);
 var c = url.searchParams.get("c");
 
 console.log("parameter condition " + c);
 
-var maxTrial = 90;
+var maxTrial = 1;
 var currentWeight = 300;
 
 
@@ -278,8 +277,17 @@ function calculateWeightLoss() {
         document.getElementById("task").disabled = true;
 
         $("#debrief").hide();
+        $("#slidecontainer").hide();
         $("#demo").hide();
-        $.getScript("Survey/SurveyDemo.js");
+
+        console.log("Ocultando canvas")
+        $("#canvasdiv").hide();
+        $("#canvasExp").hide()
+
+
+
+
+        $.getScript("Survey/SurveyCausal.js");
 
         //  trialWeight[maxTrial+1]=lbsToKgIndex(currentWeight).toFixed(2)  //valor final
 

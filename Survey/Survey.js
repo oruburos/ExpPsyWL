@@ -49,7 +49,7 @@ var survey = new Survey.Model(json);
 
 survey.onComplete.add(function (result) {
     $('.sv_body.sv_completed_page').hide();
-    $("body").css("overflow-y", "hidden");
+   // $("body").css("overflow-y", "hidden");
      $(function () {
          //console.log("cargando survey")
          fillData("middleman")
