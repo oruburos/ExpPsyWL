@@ -19,16 +19,16 @@ var c = url.searchParams.get("c");
 
 console.log("parameter condition " + c);
 
-var maxTrial = 9;
-var stepQuestion = 5; //cada cuanto pregunta
+var maxTrial = 90;
+var stepQuestion = 15; //cada cuanto pregunta
 
 
 if ( c == 3 || c==4 ){
 
-    stepQuestion = 3;
+    stepQuestion = 15;
 
 }else{
-    stepQuestion = 9;
+    stepQuestion = 90;
 }
 
 var currentWeight = 300;

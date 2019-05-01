@@ -19,7 +19,7 @@ var json = {
                             {
                                 type: "radiogroup",
                                 name: "gender",
-                                isRequired: false,
+                                isRequired: true,
                                 title: "What is your gender?",
                                 choices: ["Male", "Female", "Other", "Prefer not to say"]
                             },
@@ -27,7 +27,7 @@ var json = {
                                 type: "text",
                                 name: "age",
                                 title: "What is your age?",
-                                 isRequired: false,
+                                 isRequired: true,
                                 validators: [
                                     {
                                         type: "numeric",
@@ -39,7 +39,7 @@ var json = {
                             {
                                 type: "dropdown",
                                 name: "education",
-                                isRequired: false,
+                                isRequired: true,
                                 title: "What is the highest level of education you have completed?",
                                 choices: ["Other",
                                     "some high school",
@@ -49,6 +49,17 @@ var json = {
                                     "college graduate",
                                     "some posgraduate work",
                                     "post graduate degree"]
+                            },
+                            {
+                                type: "rating",
+                                name: "control_score",
+                                title: "Please indicate to what extent you felt you had control over your weight on daily basis.",
+                               isRequired: true,
+                                rateMin: 0,
+                                "rateMax": 10,
+                        "minRateDescription": "No Control",
+                    "maxRateDescription": "Complete Control"
+
                             }
                         ]
                     }
@@ -67,13 +78,27 @@ survey.onComplete.add(function (result) {
     $('.sv_body.sv_completed_page').hide();
     $("body").css("overflow-y", "hidden");
      $(function () {
-          $("#slidecontainer").show();
+
+
+
+         /* $("#slidecontainer").show();
          div = document.getElementById("day")
          div.innerHTML = " Participation completed";
     $("#demo").show();
     $("#debrief").hide();
     $("#canvasExp").hide();
+*/
 
+
+ $("#slidecontainer").show();
+         div = document.getElementById("day")
+         div.innerHTML = " Participation completed";
+         $("#demo").show();
+         $("#debrief").hide();
+         $("#canvasExp").hide();
+         console.log("Preguntas")
+         console.table(questions);
+         console.log ( JSON.stringify(result.data))
 
 
     });

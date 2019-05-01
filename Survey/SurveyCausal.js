@@ -19,20 +19,22 @@ var json = {
                             {
                                 type: "nouislider",
                                 name: "steps_impact",
-                               // isRequired: true,
+                                isRequired: true,
                                 title: "To what extent does the amount of steps taken impact changes in weight? [0 not at all to 100 definitely]",
                             }     ,         {
                                 type: "nouislider",
                                 name: "calories_impact",
                                 title: "To what extent does the amount of calories consumed impact changes in weight? [0 not at all to 100 definitely]",
-                                // isRequired: true,
+                                 isRequired: true,
                             },
                             {
                                 type: "nouislider",
                                 name: "confidence",
-                                //isRequired: true,
+                                isRequired: true,
                                 title: "To what extent do you believe that what you are choosing to do (i.e. choosing number of steps, choosing number of calories consumed, or both) can change weight in the way you expect? [0 not at all to 100 definitely]",
-                            },
+                            }
+
+                            /*,
                             {
                                 type: "rating",
                                 name: "control_score",
@@ -44,7 +46,7 @@ var json = {
                     "maxRateDescription": "Complete Control"
 
                             },
-
+*/
 
 
                                 ]
@@ -73,7 +75,9 @@ survey.onComplete.add(function (result) {
 
     if( experimentFinished){
      $(function () {
-         $("#slidecontainer").show();
+
+
+        /* $("#slidecontainer").show();
          div = document.getElementById("day")
          div.innerHTML = " Participation completed";
          $("#demo").show();
@@ -81,7 +85,7 @@ survey.onComplete.add(function (result) {
          $("#canvasExp").hide();
          console.log("Preguntas")
          console.table(questions);
-
+*/  $.getScript("Survey/SurveyDemo.js");
     });
      }
      else{
