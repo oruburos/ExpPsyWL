@@ -25,6 +25,9 @@ var stepQuestion = 15; //cada cuanto pregunta
 
 if ( c == 3 || c==4 ){
 
+
+    /*Conditions with extra line*/
+    //“Every so often you will be asked a series of 3 questions throughout the study trails. Please answer them using the slider scale that will be provided."
     stepQuestion = 15;
 
 }else{
