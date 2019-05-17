@@ -5,6 +5,9 @@ var trialWeight = [];//complete record
 var trial = 1;
 
 
+var mode= -1; // 1 kilo 2 pounds
+
+
 var JSONData;
 var labels = [];
 var dataw = [];
