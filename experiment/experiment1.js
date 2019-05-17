@@ -103,35 +103,53 @@ function calculateWeightLoss() {
 
 
     //peso
-    // trialWeight[trial - 1] = lbsToKgIndex(currentWeight);
-
-  //  console.log("peso actual " + lbsToKgIndex(currentWeight))
     if (JSONData.daywl < 0) {
 
+        if ( mode == 1) {///modo kilos
         info = "You <b>GAIN: " + (-1 * JSONData.daywl.toFixed(2)) + " kg.</b> since yesterday.<br>" +
             "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
         if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4) ){
 
             info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - (JSONData.oml)).toFixed(2) + "kg</b>.<br>";
         }
+        }
+        if ( mode == 2) {//moodo pounds
+        info = "You <b>GAIN: " + (-1 * kgToLbs(JSONData.daywl).toFixed(2)) + " pounds.</b> since yesterday.<br>" +
+            "Your current weight is: <b>" + currentWeight.toFixed(2) + " pounds.</b><br>";
+        if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4) ){
+
+            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (currentWeight - kgToLbs(JSONData.oml)).toFixed(2) + " pounds</b>.<br>";
+        }
+        }
     } else {
 
+ if ( mode == 1) {//modo kilos
+     info = "You <b>LOST: " + JSONData.daywl.toFixed(2) + " kg.</b> since yesterday.<br>" +
+         "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
+     if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4)) {
 
-        info = "You <b>LOST: " + JSONData.daywl.toFixed(2) + " kg.</b> since yesterday.<br>" +
-            "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(2) + "kg.</b><br>";
-        if (typeof JSONData.oml !== 'undefined' &&  (c == 2 || c == 4) ) {
+         info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - JSONData.oml).toFixed(2) + "kg</b>.<br>";
+     }
+ }
+ if ( mode == 2) {//modo pounds
+     info = "You <b>LOST: " + kgToLbs(JSONData.daywl).toFixed(2) + " pounds.</b> since yesterday.<br>" +
+         "Your current weight is: <b>" + currentWeight.toFixed(2) + " pounds.</b><br>";
+     if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4)) {
 
-            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - JSONData.oml).toFixed(2) + "kg</b>.<br>";
-        }
-
+         info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (currentWeight - kgToLbs(JSONData).oml).toFixed(2) + "pounds</b>.<br>";
+     }
+ }
     }
 
     document.getElementById("demo").innerHTML = info
 
     BG.responsive(Math.ceil(trial / maxTrial * 100), 20)
 
-
+if ( mode ==1 ) {
     currentTrial = new RecordTrial(trial, calories, steps, lbsToKgIndex(prevWeight), lbsToKgIndex(currentWeight));
+}if( mode ==2 ){
+    currentTrial = new RecordTrial(trial, calories, steps, prevWeight, currentWeight);
+    }
     trialWeight[trial] = currentTrial;
     trialCurrWeight[trial]= currentTrial.initialWeight;
     chart.update();
@@ -209,6 +227,53 @@ function calculateWeightLoss() {
     }
 }
 
+
+
+
+function createDataset(){
+
+
+
+    var config;
+    JSONData = $().calculator({age: 35, currentWeight: 176.37, calories: 2323, endweight: 154, noise: false});
+    //console.log(" dia " + JSONData.daywl + " mes  " + JSONData.oml + " ano " + JSONData.oyl);
+
+
+    resultDiv = document.getElementById("result")
+    // resultDiv.innerHTML = JSONData
+    var result2 = JSON.parse(JSONData.jsonoutput);
+
+    labels.push("start");
+    if (mode ==1){
+        dataw.push(80)
+    }
+    else if ( mode  == 2 ) {
+        dataw.push(176.21)
+    }else{
+
+        console.log(" error MODE + "+ mode )
+    }
+
+    $.each(result2, function (k, val) {
+           //      console.log(" " + k + " : " + result2[k].currentWeight)
+
+        labels.push(parseInt(result2[k].week));
+
+        if (mode ==1){
+        dataw.push(lbsToKgIndex(parseFloat(result2[k].currentWeight)));
+    }
+    else if ( mode  == 2 ) {
+         dataw.push(parseFloat(result2[k].currentWeight));
+    }
+
+
+
+    });
+
+
+
+}
+
 function fillData(name) {
 
     switch (name) {
@@ -245,28 +310,7 @@ $(document).ready(function () {
     });
     $("#surveyElement").Survey({model: survey});
 
-
-    var config;
-    JSONData = $().calculator({age: 35, currentWeight: 176.37, calories: 2323, endweight: 154, noise: false});
-    //console.log(" dia " + JSONData.daywl + " mes  " + JSONData.oml + " ano " + JSONData.oyl);
-
-
-    resultDiv = document.getElementById("result")
-    // resultDiv.innerHTML = JSONData
-    var result2 = JSON.parse(JSONData.jsonoutput);
-
-    labels.push("start");
-    dataw.push(80)
-
-    $.each(result2, function (k, val) {
-           //      console.log(" " + k + " : " + result2[k].currentWeight)
-
-        labels.push(parseInt(result2[k].week));
-        dataw.push(lbsToKgIndex(parseFloat(result2[k].currentWeight)));
-
-
-    });
-
+   // createDataset()
 
     var slider = document.getElementById("myRange");
     var output = document.getElementById("calories");
@@ -313,7 +357,17 @@ BG.responsive = function (percentage, duration) {
 };
 
 
-config = {
+
+
+var chart;
+
+function createChart() {
+    var ctx = document.getElementById('canvasExp').getContext('2d');
+
+
+
+    createDataset()
+    config = {
     type: 'line',
     data: {
         labels: labels,
@@ -366,12 +420,6 @@ config = {
         }
     }
 };
-
-
-var chart;
-
-function createChart() {
-    var ctx = document.getElementById('canvasExp').getContext('2d');
 
     chart = new Chart(ctx, config);
 
