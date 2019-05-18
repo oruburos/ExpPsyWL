@@ -5,6 +5,7 @@ console.log("recibiendo condicion Survey " + c)
 var initialWeight = 80
 var unitslabel= ""
 var targetLose = 10
+var altura = "183 cm"
 
 var htmlCond12 = "Please imagine you are a 35-year-old man who weighs <b>"+initialWeight+" "+unitslabel+ "</b> and is 183 cm tall. That gives you a BMI of approx. 23.9, which is considered to be within the top end of the healthy range. " +
                                 "<br>Imagine you want to lose <b>"+targetLose+" "+unitslabel+ "</b> within the next 3 months by controlling your diet and " +
@@ -23,7 +24,7 @@ var htmlCond12 = "Please imagine you are a researcher investigating ways to ensu
     "<br>weight-loss simulator." +
     "<br>This simulator mimics a person’s physiological response to diet and exercise on daily basis." +
     "<br> The simulator simulates the weight of Sam, an average 35-year old<br> man who weighs <b>"+initialWeight+ ""+unitslabel+ "</b> and is 183 cm tall. " +
-    "<br>As a researcher, your goal is to determine the best way for somebody like<br> Sam to lose <b>"+targetLose+" "+unitslabel+ "</b> within the 3 months" +
+    "<br>As a researcher, your goal is to determine the best way for somebody like<br> Sam to lose <b>"+ targetLose+" "+unitslabel + "</b> within the 3 months" +
     "<br> by controlling the balance between daily diet and exercise. The simulator tells you Sam’s weight on day 1 <b>"+initialWeight+ ""+unitslabel+ "</b> and" +
     "<br>then asks you to input the number of calories Sam could consume on day 1 as well as how much exercise Sam could do on that day." +
     "<br>To indicate the calories simply move the slider on the scale. " +
@@ -119,18 +120,20 @@ if ( unitslabel != question1){
      console.log( "80 kilos " )
      initialWeight = 80
      targetLose = 10
+     altura = "183 cm"
  }
     else {
      initialWeight = 176.21
      targetLose = 22.04
      console.log("peso en libras " + initialWeight)
+     altura = "6\""
  }
 console.log( "actualizando con " + unitslabel)
  htmlCond12 = "Please imagine you are a researcher investigating ways to ensure that people lose weight in " +
     "a healthy manner: gradually and consistently over time. To do so you will be presented with a " +
     "weight-loss simulator." +
     "<br>This simulator mimics a person's physiological response to diet and exercise on daily basis." +
-    "The simulator simulates the weight of Sam, an average 35-year old man who weighs <b>"+initialWeight+ " "+unitslabel+ "</b> and is 183 cm tall. " +
+    "The simulator simulates the weight of Sam, an average 35-year old man who weighs <b>"+initialWeight+ " "+unitslabel+ "</b> and is "+ altura+" tall. " +
     "<br>As a researcher, your goal is to determine the best way for somebody like Sam to lose <b>"+targetLose+" "+unitslabel+ "</b> within the 3 months" +
     "by controlling the balance between daily diet and exercise.<br> The simulator tells you Sam's weight on day 1 <b>"+initialWeight+ " "+unitslabel+ "</b> and " +
     "then asks you to input the number of calories Sam could consume on day 1 as well as how much exercise Sam could do on that day." +
@@ -142,11 +145,11 @@ console.log( "actualizando con " + unitslabel)
     "<br>to help you keep track of your goal." +
     "<br><br>Here below you can see the sliders you will use to indicate your answers."+
     "<br><br><img src='img/slidebar.png' class='centerQMUL' width='700' />" +
-     "<br><br>Your primary goal is to ensure Sam reaches a weight of <b>"+(initialWeight-targetLose)+ " "+unitslabel+ "</b> by the end of the 90 days of weight loss simulation. Your secondary goal is to make sure he achieves this weight loss as gradually and consistently " +
+     "<br><br>Your primary goal is to ensure Sam reaches a weight of <b>"+(initialWeight-targetLose).toFixed(2)+ " "+unitslabel+ "</b> by the end of the 90 days of weight loss simulation. Your secondary goal is to make sure he achieves this weight loss as gradually and consistently " +
      "<br>as possible throughout the 90 days. This means that you will need to figure out the optimal calories for sam to take in every day and how much exercise Sam should do every day. You should be able " +
      "to learn<br>this on a trial and error basis using the simulator. Importantly, you should consider both diet and exercise and work out the balance between them. This means that you should not just control the diet and ignore" +
      "<br>exercise, or just focus on exercise and ignore diet."+
-    "<br><br>Here below you can see the results of the day.<br><img src='img/graph.png' class='centerQMUL' width='700' /> "
+    "<br><br>Here below you can see the results of the day.<br><img src='img/graph"+unitslabel+".png' class='centerQMUL' width='700' /> "
 
 
 if (c == 1 ||c==2) {
