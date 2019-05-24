@@ -41,7 +41,7 @@ htmlIntro =""
 if (c == 1 ||c==2) {
     htmlIntro =htmlCond12
 }else {
-    htmlIntro = htmlCond12 +"<br>Every so often you will be asked a series of 3 questions throughout the study trails. Please answer them using the slider scale that will be provided."
+    htmlIntro = htmlCond12 +"<br>Every so often you will be asked a series of 3 questions throughout the study trials. Please answer them using the slider scale that will be provided."
 
 
 }
@@ -156,7 +156,7 @@ if (c == 1 ||c==2) {
     htmlIntro =htmlCond12
 }else {
     console.log(" Poniendo extra info")
-    htmlCond12 = htmlCond12+"<br>Every so often you will be asked a series of 3 questions throughout the study trails. Please answer them using the slider scale that will be provided."
+    htmlCond12 = htmlCond12+"<br>Every so often you will be asked a series of 3 questions throughout the study trials. Please answer them using the slider scale that will be provided."
 
 }
     var pregunta = survey.pages[0].getQuestionByName("description");
