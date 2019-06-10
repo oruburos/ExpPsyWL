@@ -4,6 +4,8 @@
     <list default="true" id="81e2d94b-ff6d-478b-a0b3-c2d343109b25" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Survey/Survey.js" beforeDir="false" afterPath="$PROJECT_DIR$/Survey/Survey.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment/experiment1.js" beforeDir="false" afterPath="$PROJECT_DIR$/experiment/experiment1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/weightmodelsimple.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/weightmodelsimple.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,8 +151,8 @@
     <session id="-993219816">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.154" value="1" />
           <entry key="project.open.time.2" value="2" />
@@ -161,35 +163,38 @@
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.62" value="2" />
+          <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.94" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="10" />
           <entry key="HTML" value="2" />
-          <entry key="JavaScript" value="19" />
+          <entry key="JavaScript" value="20" />
           <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="123" />
           <entry key="HTML" value="134" />
-          <entry key="JavaScript" value="3836" />
-          <entry key="PLAIN_TEXT" value="380" />
+          <entry key="JavaScript" value="3894" />
+          <entry key="PLAIN_TEXT" value="393" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
@@ -201,8 +206,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiment/experiment1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4085">
-              <caret line="215" selection-start-line="215" selection-end-line="215" />
+            <state relative-caret-position="2204">
+              <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/weightmodelsimple.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3515">
+              <caret line="185" column="62" selection-start-line="185" selection-start-column="62" selection-end-line="185" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -210,8 +224,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Survey/Survey.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+            <state relative-caret-position="234">
+              <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/common.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -219,7 +251,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Survey/SurveyCausal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
+            <state relative-caret-position="361">
               <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
             </state>
           </provider>
@@ -238,9 +270,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>difference</find>
-      <find>CalculatorJSON</find>
-      <find>JSONOutput</find>
       <find>startWeight</find>
       <find>dailyDifference</find>
       <find>dailyDifference2</find>
@@ -268,7 +297,13 @@
       <find>c == 2</find>
       <find>&quot;</find>
       <find>filldat</find>
+      <find>toFixed(2)</find>
+      <find>controllin</find>
+      <find>well</find>
     </findStrings>
+    <replaceStrings>
+      <replace>toFixed(1)</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -292,7 +327,6 @@
         <option value="$PROJECT_DIR$/VersionCanvas.html" />
         <option value="$PROJECT_DIR$/model/core.js" />
         <option value="$PROJECT_DIR$/indexV2.html" />
-        <option value="$PROJECT_DIR$/model/weightmodelsimple.js" />
         <option value="$PROJECT_DIR$/Survey/SuerveyDemo.js" />
         <option value="$PROJECT_DIR$/Debrief.html" />
         <option value="$PROJECT_DIR$/css/controltask.css" />
@@ -302,8 +336,10 @@
         <option value="$PROJECT_DIR$/Survey/SurveyDemo.js" />
         <option value="$PROJECT_DIR$/Survey/SurveyCausal.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/model/weightmodelsimple.js" />
         <option value="$PROJECT_DIR$/experiment/experiment1.js" />
         <option value="$PROJECT_DIR$/Survey/Survey.js" />
+        <option value="$PROJECT_DIR$/php/config.php" />
       </list>
     </option>
   </component>
@@ -314,8 +350,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="480" />
-    <option name="y" value="110" />
+    <option name="x" value="285" />
+    <option name="y" value="270" />
     <option name="width" value="1370" />
     <option name="height" value="735" />
   </component>
@@ -325,7 +361,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -341,12 +376,13 @@
             <path>
               <item name="ExpPsyWL" type="b2602c69:ProjectViewProjectNode" />
               <item name="ExpPsyWL" type="462c0819:PsiDirectoryNode" />
-              <item name="Survey" type="462c0819:PsiDirectoryNode" />
+              <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,14 +550,20 @@
       <option name="project" value="LOCAL" />
       <updated>1558192959915</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Inches and centimeters, new img,">
+      <created>1558711660592</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1558711660592</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08783784" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14527027" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -591,7 +633,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Inches and centimeters, new img," />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../nhsWP/index.html" />
     <entry file="file://$PROJECT_DIR$/../../nhsWP/services/bodymodel.js" />
     <entry file="file://$PROJECT_DIR$/../../nhsWP/services/dailyparams.js" />
     <entry file="file://$PROJECT_DIR$/../../nhsWP/services/intervention.js" />
@@ -810,42 +851,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/weightmodelsimple.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1007">
-          <caret line="157" column="68" selection-start-line="157" selection-start-column="68" selection-end-line="157" selection-end-column="68" />
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment/experiment1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4085">
-          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        <state relative-caret-position="2204">
+          <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Survey/SurveyCausal.js">
+    <entry file="file://$PROJECT_DIR$/model/weightmodelsimple.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="3515">
+          <caret line="185" column="62" selection-start-line="185" selection-start-column="62" selection-end-line="185" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Survey/Survey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
+        <state relative-caret-position="234">
+          <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/php/init.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/parseProlific.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Survey/SurveyCausal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
     </entry>

@@ -178,12 +178,12 @@
 
                 //agregar daily difference
                 dailyDifference =  ((total - $.fn.calculator.defaults.calories) / 3500).toFixed(2);
-                 weightLossDay =  ((total - $.fn.calculator.defaults.calories) / 3500).toFixed(2);//Valor 1
-
+            //     weightLossDay =  ((total - $.fn.calculator.defaults.calories) / 3500).toFixed(2);//Valor 1
+ weightLossDay =  ((total - $.fn.calculator.defaults.calories) / 3500).toFixed(2);//Valor 1
 
                 if (week == 1 ){
 
-                    this.dailyDifference2 = weightLossDay;
+                    this.dailyDifference2 = (weightLossDay/1.0).toFixed(1);
                //     console.log(" w daily differe" + dailyDifference2 +  " " + week)
                 }
 
@@ -195,7 +195,8 @@
                   if ( week == 4 ){
 
                 // console.log("*++++mes " + (startWeight-$.fn.calculator.defaults.currentWeight ));
-                    this.perdidaMes = startWeight-$.fn.calculator.defaults.currentWeight.toFixed(2);
+                    //this.perdidaMes = startWeight-$.fn.calculator.defaults.currentWeight.toFixed(2);
+                      this.perdidaMes = startWeight-$.fn.calculator.defaults.currentWeight.toFixed(1);
 
                  }
 

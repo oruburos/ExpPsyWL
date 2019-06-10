@@ -123,8 +123,9 @@ if ( unitslabel != question1){
      altura = "183 cm"
  }
     else {
-     initialWeight = 176.21
-     targetLose = 22.04
+     initialWeight = 176//176.21
+
+     targetLose = 22//22.04
      console.log("peso en libras " + initialWeight)
      altura = "6\""
  }
@@ -133,22 +134,22 @@ console.log( "actualizando con " + unitslabel)
     "a healthy manner: gradually and consistently over time. To do so you will be presented with a " +
     "weight-loss simulator." +
     "<br>This simulator mimics a person's physiological response to diet and exercise on daily basis." +
-    "The simulator simulates the weight of Sam, an average 35-year old man who weighs <b>"+initialWeight+ " "+unitslabel+ "</b> and is "+ altura+" tall. " +
-    "<br>As a researcher, your goal is to determine the best way for somebody like Sam to lose <b>"+targetLose+" "+unitslabel+ "</b> within the 3 months" +
-    "by controlling the balance between daily diet and exercise.<br> The simulator tells you Sam's weight on day 1 <b>"+initialWeight+ " "+unitslabel+ "</b> and " +
-    "then asks you to input the number of calories Sam could consume on day 1 as well as how much exercise Sam could do on that day." +
+    " The simulator simulates the weight of Sam, an average 35-year old man who weighs <b>"+initialWeight+ " "+unitslabel+ "</b> and is "+ altura+" tall. " +
+    "<br>As a researcher, your goal is to determine the best way for somebody like Sam to lose <b>"+targetLose+" "+unitslabel+ "</b> within the 3 months " +
+    "by controlling the balance between daily diet and exercise.<br> The simulator tells you Sam's weight on the first day: <b>"+initialWeight+ " "+unitslabel+ "</b>. " +
+    "It then asks you to input the number of calories Sam could consume on day 1 as well as how much exercise Sam could do on that day." +
     "<br>To indicate the calories simply move the slider on the scale. " +
     "Based on your inputs, the simulator will tell you how much Sam would weigh on day 2 if he ate and exercised according to your inputs on day 1." +
-    "<br>Then, on day 2, you will be asked to decide how many calories you want Sam to consume on day 2 as well" +
+    "<br>Then, on day 2, you will be asked to decide how many calories you want Sam to consume on day 2 as well "  +
     "as how much exercise you want Sam to do on that day. <br>Again, the simulator will use your inputs to give you Sam's projected weight for day 3." +
     " This process will continue for the full 90 days. You will be shown a progress chart at the bottom of the screen " +
     "<br>to help you keep track of your goal." +
     "<br><br>Here below you can see the sliders you will use to indicate your answers."+
     "<br><br><img src='img/slidebar.png' class='centerQMUL' width='700' />" +
-     "<br><br>Your primary goal is to ensure Sam reaches a weight of <b>"+(initialWeight-targetLose).toFixed(2)+ " "+unitslabel+ "</b> by the end of the 90 days of weight loss simulation. Your secondary goal is to make sure he achieves this weight loss as gradually and consistently " +
-     "<br>as possible throughout the 90 days. This means that you will need to figure out the optimal calories for sam to take in every day and how much exercise Sam should do every day. You should be able " +
-     "to learn<br>this on a trial and error basis using the simulator. Importantly, you should consider both diet and exercise and work out the balance between them. This means that you should not just control the diet and ignore" +
-     "<br>exercise, or just focus on exercise and ignore diet."+
+     "<br><br>Your primary goal is to ensure Sam reaches a weight of <b>"+(initialWeight-targetLose)+ " "+unitslabel+ "</b> by the end of the 90 days of weight loss simulation. Your secondary goal is to make sure he achieves this weight loss as gradually and consistently " +
+     "as possible throughout the 90 days. This means that you will need to figure out the optimal calories for sam to take in every day and how much exercise Sam should do every day. <br>You should be able " +
+     "to learn this on a trial and error basis using the simulator. Importantly, you should consider both diet and exercise and work out the balance between them. This means that you should not just control the diet and ignore" +
+     " exercise, or just focus on exercise and ignore diet."+
     "<br><br>Here below you can see the results of the day.<br><img src='img/graph"+unitslabel+".png' class='centerQMUL' width='700' /> "
 
 
