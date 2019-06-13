@@ -92,8 +92,8 @@ survey.onComplete.add(function (result) {
 
  $("#slidecontainer").show();
          div = document.getElementById("day")
-         div.innerHTML = " Participation completed";
-         $("#demo").show();
+         div.innerHTML = " <h2>Participation completed</h2>";
+         $("#demo").hide();
          $("#debrief").hide();
          $("#canvasExp").hide();
          console.log("Preguntas")

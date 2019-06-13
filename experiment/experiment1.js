@@ -109,6 +109,7 @@ function calculateWeightLoss() {
         info = "You <b>GAIN: " + (-1 * JSONData.daywl.toFixed(2)) + " kg.</b> since yesterday.<br>" +
             "Your current weight is: <b>" + lbsToKgIndex(currentWeight).toFixed(1) + "kg.</b><br>";
         if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4) ){
+//console.log(" currentweigh : " + currentWeight + " kgToLb " + kgToLbs(JSONData.oml) + " diferencia " + (currentWeight - kgToLbs(JSONData.oml)).toFixed(2) )
 
             info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (lbsToKgIndex(currentWeight) - (JSONData.oml)).toFixed(2) + "kg</b>.<br>";
         }
@@ -118,7 +119,10 @@ function calculateWeightLoss() {
             "Your current weight is: <b>" + currentWeight.toFixed(1) + " pounds.</b><br>";
         if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4) ){
 
-            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (currentWeight - kgToLbs(JSONData.oml)).toFixed(2) + " pounds</b>.<br>";
+            valueHTML = (currentWeight - kgToLbs(JSONData.oml)).toFixed(1)
+    //    console.log(" mode2 gain weight currentweigh : " + currentWeight + " kgToLb " + kgToLbs(JSONData.oml) + " diferencia " +  valueHTML)
+
+            info += "If you keep going at this rate then your projected weight after a month will be:<b> " + valueHTML + " pounds</b>.<br>";
         }
         }
     } else {
@@ -135,8 +139,11 @@ function calculateWeightLoss() {
      info = "You <b>LOST: " + kgToLbs(JSONData.daywl).toFixed(1) + " pounds.</b> since yesterday.<br>" +
          "Your current weight is: <b>" + currentWeight.toFixed(1) + " pounds.</b><br>";
      if (typeof JSONData.oml !== 'undefined' && (c == 2 || c == 4)) {
+         valueHTML = (currentWeight - kgToLbs(JSONData.oml)).toFixed(1)
+  //console.log("mode 2 lose weight currentweigh : " + currentWeight + " kgToLb " + valueHTML )
 
-         info += "If you keep going at this rate then your projected weight after a month will be:<b> " + (currentWeight - kgToLbs(JSONData).oml).toFixed(1) + "pounds</b>.<br>";
+
+         info += "If you keep going at this rate then your projected weight after a month will be:<b> " +valueHTML + " pounds</b>.<br>";
      }
  }
     }
@@ -156,15 +163,15 @@ if ( mode ==1 ) {
 
 
 
-    console.log(" trial , stepQuestion " , trial, stepQuestion, (trial%stepQuestion)  ,  (trial%stepQuestion) ==0 )
+   // console.log(" trial , stepQuestion " , trial, stepQuestion, (trial%stepQuestion)  ,  (trial%stepQuestion) ==0 )
     timeToAsk =  ((trial%stepQuestion) ==0);
-
+/*
     if ( timeToAsk)
     {
         console.log(" voy a preguntar")
     }else{
         console.log(" no tooca")
-    }
+    }*/
     trial++;
 
 
@@ -217,9 +224,6 @@ if ( mode ==1 ) {
 
 
         $.getScript("Survey/SurveyCausal.js");
-
-        //  trialWeight[maxTrial+1]=lbsToKgIndex(currentWeight).toFixed(1)  //valor final
-
 
         console.table(trialWeight)
         console.log("ultimo peso " + lbsToKgIndex(currentWeight).toFixed(1))

@@ -77,15 +77,7 @@ survey.onComplete.add(function (result) {
      $(function () {
 
 
-        /* $("#slidecontainer").show();
-         div = document.getElementById("day")
-         div.innerHTML = " Participation completed";
-         $("#demo").show();
-         $("#debrief").hide();
-         $("#canvasExp").hide();
-         console.log("Preguntas")
-         console.table(questions);
-*/  $.getScript("Survey/SurveyDemo.js");
+         $.getScript("Survey/SurveyDemo.js");
     });
      }
      else{
