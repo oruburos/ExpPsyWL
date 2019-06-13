@@ -185,6 +185,8 @@ survey.onComplete.add(function (result) {
          else {
              mode = 2 //pounds
          }
+
+         Game.createParticipant( c,  mode ),
          createChart();
           $("#slidecontainer").show("fast", function () {
 
