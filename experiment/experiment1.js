@@ -218,15 +218,18 @@ if ( mode ==1 ) {
         console.log("Ocultando canvas")
         $("#canvasdiv").hide();
         $("#canvasExp").hide();
+
         experimentFinished = true;
+        //jsut the trials
 
-
-
-
-        $.getScript("Survey/SurveyCausal.js");
 
         console.table(trialWeight)
         console.log("ultimo peso " + lbsToKgIndex(currentWeight).toFixed(1))
+
+        Game.saveTrialsDB(trialWeight);
+
+
+        $.getScript("Survey/SurveyCausal.js");
 
     }
 }

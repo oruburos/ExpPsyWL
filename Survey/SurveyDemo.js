@@ -89,6 +89,8 @@ survey.onComplete.add(function (result) {
     $("#canvasExp").hide();
 */
 
+         Game.finish( JSON.stringify(result.data) )
+
 
  $("#slidecontainer").show();
          div = document.getElementById("day")

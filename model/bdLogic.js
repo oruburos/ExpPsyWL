@@ -69,37 +69,67 @@ var Game = {
 			data: {
 				conditionExp: Game.conditionExperiment,
 				prolific_id : Game.prolificID,
-				session_id : Game.sessionID
+				session_id : Game.sessionID,
+				units : Game.unitsExperiment,
 			},
 			success: function (data) {
 
-				console.log(" id Participant : " + data )
+				console.log(" create id Participant : " + data )
 				var obj = jQuery.parseJSON(data);
 
 				Game.idParticipant = parseInt(obj);
 
-				//	console.log("se usara la condicion " + Game.conditionExperiment + " id " +  Game.idParticipant  );
+				console.log("se usara la condicion " + Game.conditionExperiment + " id " +  Game.idParticipant  );
 			}
 		});
 
 
 	},
 
-	finish: function () {
+
+
+
+	saveTrialsDB: function ( trials) {
+
+
+			console.log("update participant trials ")
+
+			$.ajax({
+				type: "POST",
+				url: 'php/updateParticipant.php',
+				data: {
+					trials: JSON.stringify(trials),
+					participantId: Game.idParticipant,
+					//survey: Game.surveyData
+				},
+				success: function (data) {
+					console.log(" update trials id Participant : " + data )
+
+
+				}
+			});
+
+
+	},
+
+
+
+	finish: function ( demographicData ) {
 
 		console.log("Entrando a finish, llamnado ajax ph experimentCompleted")
 		$.ajax({
 			type: "POST",
 			url: 'php/experimentCompleted.php',
-			data: { id_participant: Game.idParticipant, conditionexp: Game.conditionExperiment },
+			data: { id_participant: Game.idParticipant, surveyDemo: demographicData },
 			success: function (data2) {
+
 				//alert("algodon" + data2)
 				var obj = jQuery.parseJSON(data2);
 				// window.location.reload()//aqui va regreso a Prolific
 				console.log("returning to prolific " + Game.idParticipant + " " + Game.conditionExperiment)
 				//alert("aqui mando a completar el estudio, sello la bd y ya" + Game.idParticipant + " " + Game.conditionExperiment );
 				alert("Experiment completed. Going back to prolific")
-				window.location.href ='https://app.prolific.ac/submissions/complete?cc=sss';//experimento 2
+				//window.location.href ='https://app.prolific.ac/submissions/complete?cc=sss';//experimento 2
 
 
 
@@ -112,5 +142,38 @@ var Game = {
 
 
 	},
+
+
+
+
+	updateCausals: function ( causals ) {
+
+		console.log("Entrando a updatecausals, llamnado ajax ph update causal" + causals );
+		$.ajax({
+			type: "POST",
+			url: 'php/updateCausal.php',
+			data: { id_participant: Game.idParticipant, causal: causals },
+			success: function (data2) {
+
+				console.log("algodon" + data2)
+				var obj = jQuery.parseJSON(data2);
+				// window.location.reload()//aqui va regreso a Prolific
+				console.log("causals actualizado" + Game.idParticipant + " " + Game.conditionExperiment)
+				//alert("aqui mando a completar el estudio, sello la bd y ya" + Game.idParticipant + " " + Game.conditionExperiment );
+			//	alert("Experiment completed. Going back to prolific")
+				//window.location.href ='https://app.prolific.ac/submissions/complete?cc=sss';//experimento 2
+
+$.getScript("Survey/SurveyDemo.js");
+
+			},
+			error: function (xhr, ajaxOptions, thrownError) {
+				alert(xhr.status);
+				alert(thrownError);
+			}
+		});
+
+
+	},
+
 
 };

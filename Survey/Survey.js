@@ -2,6 +2,22 @@ console.log("recibiendo condicion Survey " + c)
 
 
 
+function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+            Game.prolificID = getParameterByName("PROLIFIC_PID");
+            Game.sessionID =getParameterByName("SESSION_ID") ;
+            console.log("PROLIFIC_PID: " + Game.prolificID);
+            console.log("SESSION_ID: " +Game.sessionID);
+
+
 var initialWeight = 80
 var unitslabel= ""
 var targetLose = 10

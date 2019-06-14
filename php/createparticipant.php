@@ -11,6 +11,7 @@ try
 			"prolific_id" => $_POST['prolific_id'],
 			"session_id"  => $_POST['session_id'] ,  
 			"condition_exp" => $_POST['conditionExp'],
+			"unit" => $_POST['units'],
 
 		);
 		$sql = sprintf(

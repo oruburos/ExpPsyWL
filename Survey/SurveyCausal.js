@@ -76,8 +76,8 @@ survey.onComplete.add(function (result) {
     if( experimentFinished){
      $(function () {
 
-
-         $.getScript("Survey/SurveyDemo.js");
+          Game.updateCausals(JSON.stringify(result.data) )
+      //   $.getScript("Survey/SurveyDemo.js");
     });
      }
      else{
