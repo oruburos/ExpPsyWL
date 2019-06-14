@@ -7,50 +7,6 @@ var Game = {
 	prolificID:-1,
 
 
-	recordSnapshot: function () {
-
-			Multiplayer.cmds.push(
-				JSON.stringify(
-					{
-
-						type: 'snapshot',
-				uids: { name: selectedOne.name , id : selectedOne.id,life : selectedOne.life , foraging:selectedOne.foraging, carryingResources : selectedOne.carryingResources , resources:selectedOne.resources  },
-
-				pos: pos	}
-			));
-
-		Game.historialResources[Game.mainTick] = {
-			"participant": Game.resources,
-		}
-
-	},
-
-	saveReplayIntoDB: function () {
-
-
-			console.log("update participant performance session")
-
-			$.ajax({
-				type: "POST",
-				url: 'php/updateParticipant.php',
-				data: {
-					commandsPerformance: JSON.stringify(Game.replay),
-					participantId: Game.idParticipant,
-					occupancy: JSON.stringify(HeatMap.historial),
-					historialPredator: JSON.stringify(HeatMap.historialPredator),
-					ideal: Game.totalResources,
-					historialResources: JSON.stringify(Game.historialResources),
-					survey: Game.surveyData
-				},
-				success: function (data) {
-					console.log(" termino performance")
-
-				}
-			});
-
-
-	},
-
 	getCondition: function () {
 
 			Game.conditionExperiment =1; //
@@ -152,10 +108,10 @@ var Game = {
 		$.ajax({
 			type: "POST",
 			url: 'php/updateCausal.php',
-			data: { id_participant: Game.idParticipant, causal: causals },
+			data: { participantId: Game.idParticipant, causal: causals },
 			success: function (data2) {
 
-				console.log("algodon" + data2)
+				console.log("id " + data2)
 				var obj = jQuery.parseJSON(data2);
 				// window.location.reload()//aqui va regreso a Prolific
 				console.log("causals actualizado" + Game.idParticipant + " " + Game.conditionExperiment)

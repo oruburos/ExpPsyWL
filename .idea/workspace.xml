@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81e2d94b-ff6d-478b-a0b3-c2d343109b25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/php/updateCausal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Survey/Survey.js" beforeDir="false" afterPath="$PROJECT_DIR$/Survey/Survey.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Survey/SurveyCausal.js" beforeDir="false" afterPath="$PROJECT_DIR$/Survey/SurveyCausal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Survey/SurveyDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/Survey/SurveyDemo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment/experiment1.js" beforeDir="false" afterPath="$PROJECT_DIR$/experiment/experiment1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/bdLogic.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/bdLogic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Participant.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/createparticipant.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/createparticipant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/experimentCompleted.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/experimentCompleted.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/getcondition.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/parseProlific.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/updateParticipant.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/updateParticipant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/updateCausal.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/updateCausal.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,15 +227,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="316" />
-          <entry key="php" value="97" />
-          <entry key="txt" value="18" />
+          <entry key="js" value="339" />
+          <entry key="php" value="141" />
+          <entry key="txt" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="316" />
-          <entry key="PLAIN_TEXT" value="115" />
+          <entry key="JavaScript" value="339" />
+          <entry key="PLAIN_TEXT" value="172" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -278,8 +268,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Survey/SurveyCausal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="47" />
+            <state relative-caret-position="245">
+              <caret line="82" column="10" lean-forward="true" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -287,17 +277,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Survey/SurveyDemo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
+            <state relative-caret-position="361">
+              <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/bdLogic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="150" column="88" selection-start-line="150" selection-start-column="88" selection-end-line="150" selection-end-column="88" />
+            <state relative-caret-position="815">
+              <caret line="110" column="33" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -305,7 +295,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/experimentCompleted.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="330">
               <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
             </state>
           </provider>
@@ -314,7 +304,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/createparticipant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="270">
               <caret line="18" column="30" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="30" />
             </state>
           </provider>
@@ -323,17 +313,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/updateParticipant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="37" selection-end-column="2" />
+            <state relative-caret-position="405">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/updateCausal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="405">
+              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -442,11 +432,11 @@
         <option value="$PROJECT_DIR$/php/createparticipant.php" />
         <option value="$PROJECT_DIR$/Survey/Survey.js" />
         <option value="$PROJECT_DIR$/experiment/experiment1.js" />
-        <option value="$PROJECT_DIR$/php/updateParticipant.php" />
         <option value="$PROJECT_DIR$/Survey/SurveyDemo.js" />
         <option value="$PROJECT_DIR$/php/experimentCompleted.php" />
-        <option value="$PROJECT_DIR$/php/updateCausal.php" />
         <option value="$PROJECT_DIR$/Survey/SurveyCausal.js" />
+        <option value="$PROJECT_DIR$/php/updateParticipant.php" />
+        <option value="$PROJECT_DIR$/php/updateCausal.php" />
         <option value="$PROJECT_DIR$/model/bdLogic.js" />
       </list>
     </option>
@@ -702,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560466931779</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="bd logic updatecausals">
+      <created>1560472332380</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1560472332380</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -720,7 +717,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49864864" visible="true" weight="0.37885463" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49864864" weight="0.37885463" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50135136" side_tool="true" weight="0.32991204" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32892805" />
@@ -732,7 +729,7 @@
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.225" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -743,9 +740,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49864864" visible="true" weight="0.32991204" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49864864" visible="true" weight="0.37885463" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50135136" side_tool="true" visible="true" weight="0.32991204" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50135136" side_tool="true" weight="0.32991204" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32892805" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -782,7 +779,8 @@
     <MESSAGE value="Php" />
     <MESSAGE value="bd logic" />
     <MESSAGE value="bd logic createparticipant" />
-    <option name="LAST_COMMIT_MESSAGE" value="bd logic createparticipant" />
+    <MESSAGE value="bd logic updatecausals" />
+    <option name="LAST_COMMIT_MESSAGE" value="bd logic updatecausals" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/nhsWP/controllers/palDialogController.js">
@@ -1030,10 +1028,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/createparticipant.php">
+    <entry file="file://$PROJECT_DIR$/Survey/Survey.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="-2656">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -1044,52 +1042,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Survey/Survey.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2656">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/updateParticipant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="37" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/experimentCompleted.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Survey/SurveyDemo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
+        <state relative-caret-position="361">
+          <caret line="97" column="27" lean-forward="true" selection-start-line="97" selection-start-column="27" selection-end-line="97" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Survey/SurveyCausal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="47" />
+        <state relative-caret-position="245">
+          <caret line="82" column="10" lean-forward="true" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/updateCausal.php">
+    <entry file="file://$PROJECT_DIR$/php/updateParticipant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="405">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/createparticipant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/bdLogic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="150" column="88" selection-start-line="150" selection-start-column="88" selection-end-line="150" selection-end-column="88" />
+        <state relative-caret-position="815">
+          <caret line="110" column="33" selection-start-line="110" selection-start-column="33" selection-end-line="110" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/experimentCompleted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/updateCausal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
         </state>
       </provider>
     </entry>

@@ -1,5 +1,4 @@
 
-
 <?php
 
 
@@ -24,6 +23,7 @@ $connection = new PDO($dsn, $username, $password, $options);
 			$stmt->bindParam(':id_participant', $_POST['participantId'], PDO::PARAM_INT);
 			$stmt->bindParam(':causal', $_POST['causal'],  PDO::PARAM_LOB );
 			$stmt->execute();
+
 
 		echo json_encode($_POST['participantId']);
 
